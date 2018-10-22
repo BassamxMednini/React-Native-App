@@ -80,6 +80,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="w86-yI-Iqb" id="wkw-C8-2VP"/>
+                        <outlet property="conditionImageView" destination="1CP-Mk-rqc" id="eTa-p2-XQM"/>
+                        <outlet property="conditionLabel" destination="D7a-dQ-oMR" id="Isg-1t-n2q"/>
+                        <outlet property="dayLabel" destination="Tnb-Jd-9e8" id="4AE-I5-3Vs"/>
+                        <outlet property="locationLabel" destination="MMJ-dA-MJ2" id="kLb-pO-JjU"/>
+                        <outlet property="temperatureLabel" destination="9Bp-7z-qmO" id="Xlu-Sh-KCB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
