@@ -41,5 +41,14 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Wir benötigen deinen Ort um das Wetter herauszufinden (1)</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Wir benötigen deinen Ort um das Wetter herauszufinden (2)</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
