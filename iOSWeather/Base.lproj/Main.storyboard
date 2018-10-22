@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iOSWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w86-yI-Iqb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" red="0.27379521060000001" green="0.43771731759999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" red="0.27379521060000001" green="0.43771731759999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stuttgart" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMJ-dA-MJ2">
+                                <rect key="frame" x="146.66666666666666" y="84" width="82" height="28"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Montag" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tnb-Jd-9e8">
+                                <rect key="frame" x="157.66666666666666" y="120" width="60" height="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sonnig" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7a-dQ-oMR">
+                                <rect key="frame" x="161" y="376" width="53" height="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Bp-7z-qmO">
+                                <rect key="frame" x="154" y="425" width="67" height="82"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="60"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="℃" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E7e-8b-6l3">
+                                <rect key="frame" x="223" y="467" width="20" height="24"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01d" translatesAutoresizingMaskIntoConstraints="NO" id="1CP-Mk-rqc">
+                                <rect key="frame" x="87.666666666666686" y="174" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Sm9-v4-q3E"/>
+                                    <constraint firstAttribute="width" constant="200" id="rNH-Sf-rOu"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="MMJ-dA-MJ2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="6NV-VM-DaT"/>
+                            <constraint firstItem="Tnb-Jd-9e8" firstAttribute="top" secondItem="MMJ-dA-MJ2" secondAttribute="bottom" constant="8" id="7nV-jT-biO"/>
+                            <constraint firstItem="9Bp-7z-qmO" firstAttribute="top" secondItem="D7a-dQ-oMR" secondAttribute="bottom" constant="25" id="8qE-3P-XTT"/>
+                            <constraint firstItem="w86-yI-Iqb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="E77-ws-chy"/>
+                            <constraint firstItem="E7e-8b-6l3" firstAttribute="leading" secondItem="9Bp-7z-qmO" secondAttribute="trailing" constant="2" id="MQi-EB-8x4"/>
+                            <constraint firstItem="9Bp-7z-qmO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OBg-vY-MMk"/>
+                            <constraint firstItem="D7a-dQ-oMR" firstAttribute="top" secondItem="1CP-Mk-rqc" secondAttribute="bottom" constant="2" id="QlD-ML-Bck"/>
+                            <constraint firstItem="w86-yI-Iqb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UNe-Lo-bvI"/>
+                            <constraint firstItem="w86-yI-Iqb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="VHn-Z0-8hX"/>
+                            <constraint firstItem="D7a-dQ-oMR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vl2-Cj-W5N"/>
+                            <constraint firstItem="MMJ-dA-MJ2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ctl-1s-2HY"/>
+                            <constraint firstItem="E7e-8b-6l3" firstAttribute="top" secondItem="9Bp-7z-qmO" secondAttribute="bottom" constant="-40" id="ijE-GW-IWj"/>
+                            <constraint firstItem="Tnb-Jd-9e8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pRz-rg-Ngk"/>
+                            <constraint firstItem="1CP-Mk-rqc" firstAttribute="top" secondItem="Tnb-Jd-9e8" secondAttribute="bottom" constant="30" id="tbc-qL-hBq"/>
+                            <constraint firstItem="w86-yI-Iqb" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="vst-Fd-d0u"/>
+                            <constraint firstItem="1CP-Mk-rqc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yXP-RZ-9ty"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="25.862068965517242"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="01d" width="512" height="512"/>
+    </resources>
+</document>
