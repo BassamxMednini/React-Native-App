@@ -85,8 +85,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 }
             }
         }
+        self.locationManager.stopUpdatingLocation()
     }
 
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+    }
+    
     func setBlueGradientBackground() {
         let topColor = UIColor(red: 95.0/255.0, green: 165.0/255.0, blue: 1.0, alpha: 1.0).cgColor
         let bottomColor = UIColor(red: 72.0/255.0, green: 114.0/255.0, blue: 184.0/255.0, alpha: 1.0).cgColor
