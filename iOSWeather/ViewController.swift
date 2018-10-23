@@ -6,13 +6,14 @@
 //  Copyright © 2018 Bassam Mednini. All rights reserved.
 //
 
+import Foundation
 import UIKit
 import Alamofire
 import SwiftyJSON
 import NVActivityIndicatorView
 import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!
@@ -24,8 +25,8 @@ class ViewController: UIViewController {
     let gradientLayer = CAGradientLayer();
     
     let apiKey = "696b54370f400e17bdf082b139f3383b"
-    let lat = 12.12212
-    let lon = 105.22343
+    var lat = 12.12212
+    var lon = 105.22343
     var activityIndicator: NVActivityIndicatorView!
     let locationManager = CLLocationManager()
     
@@ -38,10 +39,52 @@ class ViewController: UIViewController {
         activityIndicator = NVActivityIndicatorView(frame: indicatorFrame, type: .lineScale, color: UIColor.white, padding: 20.0)
         activityIndicator.backgroundColor = UIColor.black
         view.addSubview(activityIndicator)
+        
+        locationManager.requestWhenInUseAuthorization()
+        
+        activityIndicator.startAnimating()
+        if(CLLocationManager.locationServicesEnabled()) {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         setBlueGradientBackground()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        lat = 48.836689 // location.coordinate.latitude
+        lon = 10.097116 // location.coordinate.longitude
+        Alamofire.request("http://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(apiKey)&units=metric").responseJSON {
+            response in
+            self.activityIndicator.stopAnimating()
+            if let responseStr = response.result.value {
+                let jsonResponse = JSON(responseStr)
+                let jsonWeather = jsonResponse["weather"].array![0]
+                let jsonTemp = jsonResponse["main"]
+                let iconName = jsonWeather["icon"].stringValue
+                
+                self.locationLabel.text = jsonResponse["name"].stringValue
+                self.conditionImageView.image = UIImage(named: iconName)
+                self.conditionLabel.text = jsonWeather["main"].stringValue
+                self.temperatureLabel.text = "\(Int(round(jsonTemp["temp"].doubleValue)))"
+                
+                let date = Date()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "EEEE"
+                self.dayLabel.text = dateFormatter.string(from: date)
+                
+                let suffix = iconName.suffix(1)
+                if (suffix == "n") {
+                    self.setGreyGredientBackground()
+                } else {
+                    self.setBlueGradientBackground()
+                }
+            }
+        }
     }
 
     func setBlueGradientBackground() {
