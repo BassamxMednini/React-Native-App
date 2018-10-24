@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController {
     
@@ -24,13 +25,16 @@ class ViewController: UIViewController {
     }
     
     @objc func updateTimerLabel() {
-        
+        counter += 0.1
+        timerLabel.text = String(round(counter * 10) / 10)
     }
 
     @IBAction func startStopButtonTouch(_ sender: UIButton) {
         
         if isStarted {
-            
+            timer?.invalidate()
+            isStarted = false
+            startStopButton.setTitle("Start", for: .normal)
         } else {
             timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(updateTimerLabel), userInfo: nil, repeats: true)
             isStarted = true
@@ -41,6 +45,16 @@ class ViewController: UIViewController {
     
     
     @IBAction func resetTouch(_ sender: UIButton) {
+
+        if isStarted {
+            timer?.invalidate()
+            startStopButton.setTitle("Start", for: .normal)
+            timerLabel.text = "0.0"
+            isStarted = false
+        } else {
+            timer?.invalidate()
+            timerLabel.text = "0.0"
+        }
         
     }
     
